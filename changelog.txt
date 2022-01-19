@@ -1,0 +1,2 @@
+- pending: send email after user is verified confirm.php
+- admin panel: user is created send email to user add_new_user_process.php

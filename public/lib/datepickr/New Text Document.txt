@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="../datepickr/jquery-ui.css" />
+  <script src="../datepickr/jquery-1.9.1.js"></script>
+  <script src="../datepickr/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#recpt_chq_date" ).datepicker({
+      changeMonth: true,
+      //numberOfMonths: 2,
+     
+    });
+    $( "#recpt_chq_date1" ).datepicker({
+      changeMonth: true,
+      //numberOfMonths: 2,
+      
+    });
+	$( "#recpt_date" ).datepicker({
+      changeMonth: true,
+      //numberOfMonths: 2,
+      
+    });
+  });
+  </script>

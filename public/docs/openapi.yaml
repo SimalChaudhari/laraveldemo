@@ -1,0 +1,686 @@
+openapi: 3.0.3
+info:
+    title: 'Hippa Mart'
+    description: ''
+    version: 1.0.0
+servers:
+    -
+        url: 'http://127.0.0.1:8000'
+paths:
+    /api/auth/login:
+        post:
+            summary: Login
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    access_token: eyJ0eXA...
+                                    token_type: Bearer
+                                    email: testuser@tests.com
+                                    password: secret
+                                properties:
+                                    access_token: { type: string, example: eyJ0eXA... }
+                                    token_type: { type: string, example: Bearer }
+                                    email: { type: string, example: testuser@tests.com }
+                                    password: { type: string, example: secret }
+            tags:
+                - Authentication
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                username:
+                                    type: string
+                                    description: 'The username of the user.'
+                                    example: admin
+                                password:
+                                    type: string
+                                    description: 'The password of user.'
+                                    example: recusandae
+                            required:
+                                - username
+                                - password
+            security: []
+    /api/auth/register:
+        post:
+            summary: 'Register a User.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Authentication
+            security: []
+    /api/auth/logout:
+        post:
+            summary: Logout
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Authentication
+    /api/auth/refresh:
+        post:
+            summary: 'Refresh a token.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Authentication
+    /api/auth/user-profile:
+        get:
+            summary: 'Get the authenticated User.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Authentication
+    /api/user:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /api/users/list:
+        get:
+            summary: list
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    email: testuser@tests.com
+                                    password: secret
+                                properties:
+                                    email: { type: string, example: testuser@tests.com }
+                                    password: { type: string, example: secret }
+            tags:
+                - 'User Management'
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                start_date:
+                                    type: string
+                                    description: 'The start date.'
+                                    example: nam
+                                end_date:
+                                    type: string
+                                    description: 'The end date.'
+                                    example: optio
+                                company_id:
+                                    type: integer
+                                    description: 'The company_id of the user.'
+                                    example: 2
+                                start:
+                                    type: integer
+                                    description: 'The start of users length.'
+                                    example: 20
+                                length:
+                                    type: integer
+                                    description: 'The end length of users length.'
+                                    example: 13
+                                search:
+                                    type: string
+                                    description: 'The search value.'
+                                    example: laborum
+    /api/users/create:
+        post:
+            summary: create
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    email: testuser@tests.com
+                                    password: secret
+                                properties:
+                                    email: { type: string, example: testuser@tests.com }
+                                    password: { type: string, example: secret }
+            tags:
+                - 'User Management'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                firstname:
+                                    type: string
+                                    description: 'The firstname of the user.'
+                                    example: test
+                                lastname:
+                                    type: string
+                                    description: 'The lastname of the user.'
+                                    example: test
+                                username:
+                                    type: string
+                                    description: 'The username of the user.'
+                                    example: username
+                                email:
+                                    type: string
+                                    description: 'The email of the user.'
+                                    example: test@gmail.com
+                                password:
+                                    type: string
+                                    description: 'The password of user.'
+                                    example: nostrum
+                                confirm_password:
+                                    type: string
+                                    description: 'The confirm password of user.'
+                                    example: officia
+                                user_role:
+                                    type: string
+                                    description: 'The role of the user.'
+                                    example: 'admin, user'
+                                mobile:
+                                    type: string
+                                    description: 'The mobile of the user.'
+                                    example: mobile
+                                company_id:
+                                    type: integer
+                                    description: 'The company_id of the user.'
+                                    example: 13
+                            required:
+                                - firstname
+                                - lastname
+                                - username
+                                - email
+                                - password
+                                - confirm_password
+                                - user_role
+                                - mobile
+                                - company_id
+    '/api/users/get/{id}':
+        get:
+            summary: get
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    email: testuser@tests.com
+                                    password: secret
+                                properties:
+                                    email: { type: string, example: testuser@tests.com }
+                                    password: { type: string, example: secret }
+            tags:
+                - 'User Management'
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: magnam
+                required: true
+                schema:
+                    type: string
+    '/api/users/update/{id}':
+        post:
+            summary: Update
+            description: "Display Upadte User\n\nupdate a user"
+            parameters:
+                -
+                    in: query
+                    name: firstname
+                    description: 'The id of the firstname.'
+                    example: test
+                    required: true
+                    schema:
+                        type: string
+                        description: 'The id of the firstname.'
+                        example: test
+                -
+                    in: query
+                    name: lastname
+                    description: 'The id of the lastname.'
+                    example: demo
+                    required: true
+                    schema:
+                        type: string
+                        description: 'The id of the lastname.'
+                        example: demo
+                -
+                    in: query
+                    name: username
+                    description: 'The id of the username.'
+                    example: user_name
+                    required: true
+                    schema:
+                        type: string
+                        description: 'The id of the username.'
+                        example: user_name
+                -
+                    in: query
+                    name: email
+                    description: 'The id of the email.'
+                    example: test@test.com
+                    required: true
+                    schema:
+                        type: string
+                        description: 'The id of the email.'
+                        example: test@test.com
+                -
+                    in: query
+                    name: mobile
+                    description: 'The id of the mobile.'
+                    example: 1234567890
+                    required: true
+                    schema:
+                        type: integer
+                        description: 'The id of the mobile.'
+                        example: 1234567890
+                -
+                    in: query
+                    name: password
+                    description: 'The id of the password.'
+                    example: '123'
+                    required: false
+                    schema:
+                        type: string
+                        description: 'The id of the password.'
+                        example: '123'
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"firstname\": \"test\",\n \"lastname\": \"demo\",\n \"username\": \"user_name\",\n \"email\": \"test@test.com\",\n \"mobile\": \"1234567890\",\n}"
+            tags:
+                - 'User Management'
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: eveniet
+                required: true
+                schema:
+                    type: string
+    '/api/users/destroy/{id}':
+        post:
+            summary: Delete
+            description: "Display Delete User\n\ndestroy a user"
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"user_Id\": \"1\",\n \"username\": \"user_name\",\n}"
+            tags:
+                - 'User Management'
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: voluptatem
+                required: true
+                schema:
+                    type: string
+    /api/create_hipaa_mart_portal_user_api:
+        post:
+            summary: 'Create User from Wordpress Hippamart.'
+            description: 'This endpoint allows you to Create User from wordpress hippamart platform'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - 'User Management (API for Wordpress portal)'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                email:
+                                    type: string
+                                    description: 'The string of the user.'
+                                    example: test@gmail.com
+                                user_pass:
+                                    type: required
+                                    description: 'string The password of user.'
+                                    example: soluta
+                                firstname:
+                                    type: required
+                                    description: 'string The firstname of user.'
+                                    example: animi
+                                lastname:
+                                    type: required
+                                    description: 'string The lastname of user.'
+                                    example: optio
+                                username:
+                                    type: required
+                                    description: 'string The username of user.'
+                                    example: velit
+                                wp_user_id:
+                                    type: required
+                                    description: 'string The wp_user_id of user from wordpress database.'
+                                    example: tempore
+                                company_name:
+                                    type: required
+                                    description: 'string The company name of user.'
+                                    example: odio
+                                purchased_licenses:
+                                    type: required
+                                    description: 'string The purchased licenses of user.'
+                                    example: adipisci
+                                monthly_fees:
+                                    type: required
+                                    description: 'string The monthly fees of user.'
+                                    example: exercitationem
+                            required:
+                                - email
+            security: []
+    /api/delete_wp_portal_user:
+        post:
+            summary: 'Delete User.'
+            description: 'This endpoint allows you to Create User from wordpress hippamart platform'
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - 'User Management (API for Wordpress portal)'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                email:
+                                    type: string
+                                    description: 'The string of the user.'
+                                    example: test@gmail.com
+                            required:
+                                - email
+            security: []
+components:
+    securitySchemes:
+        default:
+            type: http
+            scheme: bearer
+            description: ''
+security:
+    -
+        default: []

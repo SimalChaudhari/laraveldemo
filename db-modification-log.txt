@@ -1,0 +1,28 @@
+CREATE TABLE `emp_training_acknowlegement` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` binary(16) NOT NULL,
+  `result_id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `printed_name` varchar(255) NOT NULL,
+  `signature` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `emp_training_acknowlegement`
+--
+ALTER TABLE `emp_training_acknowlegement`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `emp_training_acknowlegement`
+--
+ALTER TABLE `emp_training_acknowlegement`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;

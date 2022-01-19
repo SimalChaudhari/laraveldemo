@@ -1,0 +1,795 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "127.0.0.1"
+        }
+    ],
+    "info": {
+        "name": "Hippa Mart",
+        "_postman_id": "ecf09940-2c71-4703-bfe1-68e6728f92c1",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "description": "\nAPIs for managing login",
+            "item": [
+                {
+                    "name": "Login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/login",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"recusandae\"\n}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Login Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/auth\/login",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/auth\/login"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"recusandae\"\n}"
+                                },
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"access_token\": \"eyJ0eXA...\",\n    \"token_type\": \"Bearer\",\n    \"email\": \"testuser@tests.com\",\n    \"password\": \"secret\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Register a User.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/register",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/auth\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/logout",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/auth\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Refresh a token.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/refresh",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/auth\/refresh"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get the authenticated User.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/user-profile",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/auth\/user-profile"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "name": "Get the authenticated User. Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/auth\/user-profile",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/auth\/user-profile"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": ""
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "api\/user Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/user"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User Management",
+            "description": "\nAPIs for managing company users",
+            "item": [
+                {
+                    "name": "list",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/list",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/users\/list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"start_date\": \"nam\",\n    \"end_date\": \"optio\",\n    \"company_id\": 2,\n    \"start\": 20,\n    \"length\": 13,\n    \"search\": \"laborum\"\n}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "name": "list Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/users\/list",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/users\/list"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"start_date\": \"nam\",\n    \"end_date\": \"optio\",\n    \"company_id\": 2,\n    \"start\": 20,\n    \"length\": 13,\n    \"search\": \"laborum\"\n}"
+                                },
+                                "description": ""
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"email\": \"testuser@tests.com\",\n    \"password\": \"secret\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "create",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/create",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/users\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"firstname\": \"test\",\n    \"lastname\": \"test\",\n    \"username\": \"username\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"nostrum\",\n    \"confirm_password\": \"officia\",\n    \"user_role\": \"admin, user\",\n    \"mobile\": \"mobile\",\n    \"company_id\": 13\n}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "name": "create Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/users\/create",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/users\/create"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"firstname\": \"test\",\n    \"lastname\": \"test\",\n    \"username\": \"username\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"nostrum\",\n    \"confirm_password\": \"officia\",\n    \"user_role\": \"admin, user\",\n    \"mobile\": \"mobile\",\n    \"company_id\": 13\n}"
+                                },
+                                "description": ""
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"email\": \"testuser@tests.com\",\n    \"password\": \"secret\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "get",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/get\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/users\/get\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "magnam",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "name": "get Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/users\/get\/:id",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/users\/get\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "magnam",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": ""
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"email\": \"testuser@tests.com\",\n    \"password\": \"secret\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/update\/:id",
+                            "query": [
+                                {
+                                    "key": "firstname",
+                                    "value": "test",
+                                    "description": "The id of the firstname.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "lastname",
+                                    "value": "demo",
+                                    "description": "The id of the lastname.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "username",
+                                    "value": "user_name",
+                                    "description": "The id of the username.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "test%40test.com",
+                                    "description": "The id of the email.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "mobile",
+                                    "value": "1234567890",
+                                    "description": "The id of the mobile.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "123",
+                                    "description": "The id of the password.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/users\/update\/:id?firstname=test&lastname=demo&username=user_name&email=test%40test.com&mobile=1234567890&password=123",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "eveniet",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Display Upadte User\n\nupdate a user",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Update Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/users\/update\/:id",
+                                    "query": [
+                                        {
+                                            "key": "firstname",
+                                            "value": "test",
+                                            "description": "The id of the firstname.",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "lastname",
+                                            "value": "demo",
+                                            "description": "The id of the lastname.",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "username",
+                                            "value": "user_name",
+                                            "description": "The id of the username.",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "test%40test.com",
+                                            "description": "The id of the email.",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "mobile",
+                                            "value": "1234567890",
+                                            "description": "The id of the mobile.",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "123",
+                                            "description": "The id of the password.",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/users\/update\/:id?firstname=test&lastname=demo&username=user_name&email=test%40test.com&mobile=1234567890&password=123",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "eveniet",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Display Upadte User\n\nupdate a user",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "null"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/destroy\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/users\/destroy\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "voluptatem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Display Delete User\n\ndestroy a user",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Delete Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/users\/destroy\/:id",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/users\/destroy\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "voluptatem",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Display Delete User\n\ndestroy a user",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "null"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User Management (API for Wordpress portal)",
+            "description": "\nAPIs for managing users",
+            "item": [
+                {
+                    "name": "Create User from Wordpress Hippamart.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/create_hipaa_mart_portal_user_api",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/create_hipaa_mart_portal_user_api"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@gmail.com\",\n    \"user_pass\": \"soluta\",\n    \"firstname\": \"animi\",\n    \"lastname\": \"optio\",\n    \"username\": \"velit\",\n    \"wp_user_id\": \"tempore\",\n    \"company_name\": \"odio\",\n    \"purchased_licenses\": \"adipisci\",\n    \"monthly_fees\": \"exercitationem\"\n}"
+                        },
+                        "description": "This endpoint allows you to Create User from wordpress hippamart platform",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete User.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/delete_wp_portal_user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/delete_wp_portal_user"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@gmail.com\"\n}"
+                        },
+                        "description": "This endpoint allows you to Create User from wordpress hippamart platform",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer"
+    }
+}
